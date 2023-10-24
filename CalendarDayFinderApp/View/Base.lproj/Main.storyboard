@@ -193,6 +193,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dayTextField" destination="sdx-PP-rA8" id="MZh-Rl-Xsr"/>
+                        <outlet property="findButton" destination="89X-wh-tFm" id="ugw-iY-vMZ"/>
                         <outlet property="monthTextField" destination="0bk-AL-uU0" id="K0B-GQ-wrF"/>
                         <outlet property="yearTextField" destination="fgz-O0-KJz" id="PCB-NT-ecW"/>
                     </connections>
