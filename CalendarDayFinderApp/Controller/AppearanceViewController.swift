@@ -34,10 +34,25 @@ class AppearanceViewController: UIViewController {
         }
     }
     
+    func isDarkMode() -> Bool {
+        if #available(iOS 12.0, *) {
+            return traitCollection.userInterfaceStyle == .dark
+        } else {
+            return false
+        }
+    }
+    
     func setLabelText() {
         var labelText = "Unable to specify UI style"
         
-        #warning("change from Light Mode is On to Dark Mode is ON, based on appearance. create extension AppearanceViewController") // if this is dark mode i want to have this text, if else than that text, else textLabel.text = labelText
+        if isDarkMode() {
+            labelText = "Dark Mode is ON"
+        } else if isDarkMode() == false {
+            labelText = "Light Mode is ON"
+        }
+        
+//        DONE
+//        #warning("change from Light Mode is On to Dark Mode is ON, based on appearance. create extension AppearanceViewController")
         
         textLabel.text = labelText
     }
@@ -46,6 +61,7 @@ class AppearanceViewController: UIViewController {
 
 extension AppearanceViewController {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
         setLabelText()
-    } // this will check whether i have dark or light mode
+    } 
 }
