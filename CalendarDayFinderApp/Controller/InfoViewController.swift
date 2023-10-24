@@ -22,10 +22,7 @@ class InfoViewController: UIViewController {
         
 //        DONE
 //        #warning("assign value to the labels")
-        
-        
         // Do any additional setup after loading the view.
     }
-    
 
 }

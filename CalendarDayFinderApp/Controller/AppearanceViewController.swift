@@ -25,6 +25,7 @@ class AppearanceViewController: UIViewController {
     
     
     @IBAction func openSettings(_ sender: Any) {
+        
 //   DONE
 // #warning("open ios simulator settings app")
         if let settings = URL(string: UIApplication.openSettingsURLString) {
@@ -63,5 +64,5 @@ extension AppearanceViewController {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         setLabelText()
-    } 
+    }
 }

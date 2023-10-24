@@ -9,11 +9,47 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var dayTextField: UITextField!
+    
+    @IBOutlet weak var monthTextField: UITextField!
+    
+    @IBOutlet weak var yearTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func findWeekDay() {
+        #warning("find day of the year on Find tapped")
+        print(dayTextField.text ?? "")
+        print(monthTextField.text ?? "")
+        print(yearTextField.text ?? "")
+        
+//        Calendar
+//        DateComponents
+//        DateFormatter -> specify dateFormat
+        
+        
+//        Logic Calculation, it can't be zero in any fields. If so, we need present alert, if something went wrong
+        
+        
+//        Result label is for presenting the day
+        
+        
+//        After successfully presented result, change Find to Clear (clear all text fields to "")
+    }
+    
+    @IBAction func findButtonTapped(_ sender: Any) {
+        findWeekDay()
+    }
+    
+    
     
     // MARK: - Navigation
 
@@ -21,7 +57,6 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "info" {
             // Get the new view controller using segue.destination.
-//      vc is a view controller here
             guard let vc = segue.destination as? InfoViewController
             else { return }
             
