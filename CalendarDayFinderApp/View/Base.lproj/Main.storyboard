@@ -22,7 +22,7 @@
                         <barButtonItem key="leftBarButtonItem" image="paperplane.circle.fill" catalog="system" id="q7c-Yf-8Zz">
                             <color key="tintColor" red="0.84265781890000002" green="0.51570323350000002" blue="0.85452054889999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <segue destination="6YT-ac-TLQ" kind="show" id="x50-Ch-kma"/>
+                                <segue destination="6YT-ac-TLQ" kind="show" identifier="info" id="x50-Ch-kma"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="pencil.circle.fill" catalog="system" id="sS2-Ru-iS5">
@@ -44,14 +44,50 @@
                     <view key="view" contentMode="scaleToFill" id="zC6-0J-yn0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="jLF-uq-bVh">
+                                <rect key="frame" x="87.5" y="89" width="200" height="199"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Info" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4CV-jf-iD0">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="87"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="87" id="3aw-Pe-WDk"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="831-vl-GHu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="17"/>
+                                        <color key="textColor" red="0.7507060861" green="0.21218088530000001" blue="0.85452054889999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desc" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" showsExpansionTextWhenTruncated="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WX-L8-mcv">
+                                        <rect key="frame" x="0.0" y="112" width="200" height="87"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="AF5-dX-sAO"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="87" id="iTj-O8-ZqF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="15"/>
+                                        <color key="textColor" red="0.58567431719999996" green="0.1655360166" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Gni-lS-XGa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jLF-uq-bVh" firstAttribute="top" secondItem="Gni-lS-XGa" secondAttribute="top" constant="25" id="3bu-sb-5c1"/>
+                            <constraint firstItem="Gni-lS-XGa" firstAttribute="trailing" secondItem="jLF-uq-bVh" secondAttribute="trailing" constant="87.5" id="Vjz-Yz-hiB"/>
+                            <constraint firstItem="jLF-uq-bVh" firstAttribute="leading" secondItem="Gni-lS-XGa" secondAttribute="leading" constant="87.5" id="qWE-pq-sID"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Info" id="XuF-KO-AdO"/>
+                    <connections>
+                        <outlet property="appDescLabel" destination="3WX-L8-mcv" id="lYT-ZB-dtz"/>
+                        <outlet property="appInfoLabel" destination="4CV-jf-iD0" id="Ah4-Xh-mhm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kme-ZE-El7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="707"/>
+            <point key="canvasLocation" x="1076" y="780"/>
         </scene>
         <!--Appearance View Controller-->
         <scene sceneID="hvp-9B-mca">

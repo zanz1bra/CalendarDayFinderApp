@@ -27,9 +27,9 @@ class AppearanceViewController: UIViewController {
     @IBAction func openSettings(_ sender: Any) {
 //   DONE
 // #warning("open ios simulator settings app")
-        if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
-            if UIApplication.shared.canOpenURL(settingsURL) {
-                UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+        if let settings = URL(string: UIApplication.openSettingsURLString) {
+            if UIApplication.shared.canOpenURL(settings) {
+                UIApplication.shared.open(settings, options: [:], completionHandler: nil)
             }
         }
     }
