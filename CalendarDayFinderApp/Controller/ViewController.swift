@@ -26,23 +26,11 @@ class ViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    func findWeekDay() {
-        #warning("find day of the year on Find tapped")
+    func findWeekDay() -> String? {
+#warning("find day of the year on Find tapped")
         print(dayTextField.text ?? "")
         print(monthTextField.text ?? "")
         print(yearTextField.text ?? "")
-        
-        let calendar = Calendar.current
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        
-        
-//        Calendar
-//        DateComponents
-//        DateFormatter -> specify dateFormat
-        
-        
-//        Logic Calculation, it can't be zero in any fields. If so, we need present alert, if something went wrong
         
         if (dayTextField.text == "0" || dayTextField.text == "") || (monthTextField.text == "0" || monthTextField.text == "") || (yearTextField.text == "0" || yearTextField.text == "") {
             let title = "Something wrong!"
@@ -52,6 +40,38 @@ class ViewController: UIViewController {
             
             self.present(alert, animated: true)
         }
+        
+        guard let dayText = dayTextField.text,
+                let monthText = monthTextField.text,
+                let yearText = yearTextField.text,
+                let day = Int(dayText),
+                let month = Int(monthText),
+                let year = Int(yearText)
+        else {
+            return nil
+        }
+
+//        Calendar
+//        DateComponents
+//        DateFormatter -> specify dateFormat
+        
+        let calendar = Calendar.current
+        
+        var dateComponents = DateComponents()
+        dateComponents.day = day
+        dateComponents.month = month
+        dateComponents.year = year
+        
+        if let date = calendar.date(from: dateComponents) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "EEEE"
+            let dayOfWeek = dateFormatter.string(from: date)
+            print(dayOfWeek)
+            return dayOfWeek
+        } else {
+            return nil
+        }
+
         
 //        Result label is for presenting the day
         
