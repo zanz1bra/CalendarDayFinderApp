@@ -15,6 +15,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var yearTextField: UITextField!
     
+    @IBOutlet weak var resultLabel: UILabel!
+    
+    @IBOutlet weak var findButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +35,41 @@ class ViewController: UIViewController {
         print(monthTextField.text ?? "")
         print(yearTextField.text ?? "")
         
+// setting alert if any field is empty or zero
+        
+        if (dayTextField.text == "0" || dayTextField.text == "") || (monthTextField.text == "0" || monthTextField.text == "") || (yearTextField.text == "0" || yearTextField.text == "") {
+            let title = "Something wrong!"
+            let message = "Did you fill in all the fields and not with 0?"
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "NO", style: .default, handler: nil))
+            
+            self.present(alert, animated: true)
+        }
+        
 //        Calendar
 //        DateComponents
 //        DateFormatter -> specify dateFormat
         
+        let calendar = Calendar(identifier: .gregorian)
+        var dateComponents = DateComponents()
+        if let dayText = dayTextField.text, let day = Int(dayText) {
+            dateComponents.day = day
+        }
+        if let monthText = monthTextField.text, let month = Int(monthText) {
+            dateComponents.month = month
+        }
+        if let yearText = yearTextField.text, let year = Int(yearText) {
+            dateComponents.year = year
+        }
+
+        
+        if let date = calendar.date(from: dateComponents) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "EEEE"
+            let dayOfWeek = dateFormatter.string(from: date)
+            resultLabel.text = dayOfWeek
+            findButton.setTitle("Clear", for: .normal)
+        }
         
 //        Logic Calculation, it can't be zero in any fields. If so, we need present alert, if something went wrong
         
@@ -48,7 +83,6 @@ class ViewController: UIViewController {
     @IBAction func findButtonTapped(_ sender: Any) {
         findWeekDay()
     }
-    
     
     
     // MARK: - Navigation
