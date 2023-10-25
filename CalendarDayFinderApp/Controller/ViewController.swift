@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var yearTextField: UITextField!
     
-    @IBOutlet weak var findButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +31,6 @@ class ViewController: UIViewController {
         print(monthTextField.text ?? "")
         print(yearTextField.text ?? "")
         
-        let calendar = Calendar.current
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy"
-        
-        
 //        Calendar
 //        DateComponents
 //        DateFormatter -> specify dateFormat
@@ -44,14 +38,6 @@ class ViewController: UIViewController {
         
 //        Logic Calculation, it can't be zero in any fields. If so, we need present alert, if something went wrong
         
-        if (dayTextField.text == "0" || dayTextField.text == "") || (monthTextField.text == "0" || monthTextField.text == "") || (yearTextField.text == "0" || yearTextField.text == "") {
-            let title = "Something wrong!"
-            let message = "Did you fill all the fields?"
-            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "NO", style: .default, handler: nil))
-            
-            self.present(alert, animated: true)
-        }
         
 //        Result label is for presenting the day
         
