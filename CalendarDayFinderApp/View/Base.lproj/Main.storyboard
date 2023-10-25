@@ -192,11 +192,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="dayTextField" destination="sdx-PP-rA8" id="MZh-Rl-Xsr"/>
+                        <outlet property="dayTextField" destination="sdx-PP-rA8" id="b1R-se-EQr"/>
                         <outlet property="findButton" destination="89X-wh-tFm" id="ugw-iY-vMZ"/>
-                        <outlet property="monthTextField" destination="0bk-AL-uU0" id="K0B-GQ-wrF"/>
+                        <outlet property="monthTextField" destination="0bk-AL-uU0" id="Ff9-dt-nxt"/>
                         <outlet property="resultLabel" destination="a8q-Ev-bfj" id="8OH-2q-zAL"/>
-                        <outlet property="yearTextField" destination="fgz-O0-KJz" id="PCB-NT-ecW"/>
+                        <outlet property="yearTextField" destination="fgz-O0-KJz" id="RH7-2n-3mp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -364,10 +364,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
