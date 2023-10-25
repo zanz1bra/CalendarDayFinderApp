@@ -16,14 +16,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var yearTextField: UITextField!
     
     @IBOutlet weak var findButton: UIButton!
-        
-    @IBOutlet weak var resultLabel: UILabel!
-    
-    var result: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
 
@@ -44,7 +39,6 @@ class ViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "NO", style: .default, handler: nil))
             
             self.present(alert, animated: true)
-
         }
         
         guard let dayText = dayTextField.text,
@@ -72,13 +66,16 @@ class ViewController: UIViewController {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "EEEE"
             let dayOfWeek = dateFormatter.string(from: date)
-            result = dayOfWeek
-            resultLabel.text = dayOfWeek
-            findButton.setTitle("Clear", for: .normal)
+            print(dayOfWeek)
+            return dayOfWeek
+        } else {
+            return nil
         }
-        
+
         
 //        Result label is for presenting the day
+        
+        
 //        After successfully presented result, change Find to Clear (clear all text fields to "")
     }
     
