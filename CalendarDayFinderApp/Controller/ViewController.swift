@@ -81,9 +81,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func findButtonTapped(_ sender: Any) {
-        findWeekDay()
+        if findButton.currentTitle == "Clear" {
+            dayTextField.text = ""
+            monthTextField.text = ""
+            yearTextField.text = ""
+            resultLabel.text = "Result"
+            findButton.setTitle("Find out", for: .normal)
+        } else {
+            findWeekDay()
+        }
     }
-    
     
     // MARK: - Navigation
 
